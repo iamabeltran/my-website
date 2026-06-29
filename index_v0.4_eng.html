@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adrian Beltran — Computacional Engineer</title>
+<meta name="description" content="Profesional profile of Adrian Beltran Computacional Engineer">
+<link rel="alternate" hreflang="es" href="https://iamabeltran/index.html">
+<link rel="alternate" hreflang="en" href="https://iamabeltran/index_eng.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --primario: #008000;
+    --fondo: #FAFAFA;
+    --superficie: #FFFFFF;
+    --texto: #1F2937;
+    --texto-suave: #6B7280;
+    --borde: #E5E7EB;
+    --hover: #006B00;
+
+    --fuente-mono: 'JetBrains Mono', monospace;
+    --fuente-sans: 'Inter', sans-serif;
+
+    --ancho-max: 720px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: var(--fuente-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ul { list-style: none; }
+
+  img { max-width: 100%; display: block; }
+
+  /* Foco visible para accesibilidad */
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--primario);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ---------- Contenedor general ---------- */
+  .contenedor {
+    max-width: var(--ancho-max);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- Header / Hero ---------- */
+  header.hero {
+    padding: 96px 0 56px;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .terminal-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fuente-mono);
+    font-size: 13px;
+    color: var(--primario);
+    letter-spacing: 0.02em;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--fuente-mono);
+    font-size: 12.5px;
+  }
+
+  .lang-divisor {
+    color: var(--borde);
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    padding: 4px 2px;
+    font-family: var(--fuente-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: var(--texto-suave);
+    cursor: pointer;
+    transition: color 0.15s ease;
+  }
+
+  a.lang-btn:hover {
+    color: var(--texto);
+  }
+
+  .lang-btn.lang-activo {
+    color: var(--primario);
+    font-weight: 700;
+    cursor: default;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--primario);
+    animation: parpadeo 1.1s steps(1) infinite;
+  }
+
+  @keyframes parpadeo {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+
+  h1.nombre {
+    font-family: var(--fuente-mono);
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 44px);
+    letter-spacing: -0.02em;
+    color: var(--texto);
+    margin-bottom: 10px;
+  }
+
+  .rol {
+    font-family: var(--fuente-sans);
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--texto-suave);
+    margin-bottom: 4px;
+  }
+
+  .ubicacion {
+    font-size: 14px;
+    color: var(--texto-suave);
+  }
+
+  .ubicacion::before {
+    content: "— ";
+    color: var(--borde);
+  }
+
+  .enlace-cv {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    padding: 10px 16px;
+    font-family: var(--fuente-mono);
+    font-size: 13.5px;
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    transition: border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .enlace-cv .prompt {
+    color: var(--primario);
+  }
+
+  .enlace-cv .flecha {
+    color: var(--primario);
+    transition: transform 0.15s ease;
+  }
+
+  .enlace-cv:hover {
+    border-color: var(--primario);
+    color: var(--hover);
+  }
+
+  .enlace-cv:hover .flecha {
+    transform: translateX(2px);
+  }
+
+  /* ---------- Secciones ---------- */
+  section {
+    padding: 56px 0;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  section:last-of-type {
+    border-bottom: none;
+  }
+
+  .eyebrow {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow .indice {
+    font-family: var(--fuente-mono);
+    font-size: 13px;
+    color: var(--primario);
+  }
+
+  .eyebrow h2 {
+    font-family: var(--fuente-sans);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--texto);
+  }
+
+  .eyebrow::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--borde);
+  }
+
+  /* ---------- Listas de formación / certificaciones ---------- */
+  .bloque-formacion {
+    margin-bottom: 32px;
+  }
+
+  .bloque-formacion:last-child {
+    margin-bottom: 0;
+  }
+
+  .subtitulo-bloque {
+    font-family: var(--fuente-mono);
+    font-size: 12px;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 14px;
+  }
+
+  .lista-formacion li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 14px;
+  }
+
+  .lista-formacion li:last-child {
+    margin-bottom: 0;
+  }
+
+  .lista-formacion li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--primario);
+  }
+
+  /* Certificaciones: texto + verificación digital, nunca imágenes de diplomas */
+  .lista-certificaciones li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 14px;
+    font-size: 14.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .lista-certificaciones li:last-child {
+    margin-bottom: 0;
+  }
+
+  .lista-certificaciones li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--primario);
+  }
+
+  .lista-certificaciones .item-titulo {
+    font-weight: 600;
+    font-size: 14.5px;
+  }
+
+  .cert-separador {
+    color: var(--borde);
+    font-family: var(--fuente-mono);
+  }
+
+  .cert-verificacion {
+    font-family: var(--fuente-mono);
+    font-size: 13px;
+    color: var(--primario);
+    transition: color 0.15s ease;
+  }
+
+  .cert-verificacion:hover {
+    color: var(--hover);
+    text-decoration: underline;
+  }
+
+  /* ---------- Idiomas ---------- */
+  .lista-idiomas li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 14px;
+    font-size: 14.5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .lista-idiomas li:last-child {
+    margin-bottom: 0;
+  }
+
+  .lista-idiomas li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    background: var(--primario);
+  }
+
+  .lista-idiomas .item-titulo {
+    min-width: 70px;
+  }
+
+  .idioma-nivel {
+    font-family: var(--fuente-mono);
+    font-size: 13.5px;
+    color: var(--texto-suave);
+  }
+
+  .item-titulo {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--texto);
+  }
+
+  .item-detalle {
+    font-size: 14px;
+    color: var(--texto-suave);
+  }
+
+  .item-descripcion {
+    font-size: 14px;
+    color: var(--texto);
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* ---------- Servicios ---------- */
+  .lista-servicios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .lista-servicios li {
+    background: var(--superficie);
+    border: 1px solid var(--borde);
+    padding: 16px 18px;
+    font-size: 14.5px;
+    position: relative;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+
+  .lista-servicios li::before {
+    content: "▹";
+    color: var(--primario);
+    margin-right: 8px;
+    font-size: 13px;
+  }
+
+  .lista-servicios li:hover {
+    border-color: var(--primario);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- Enlaces ---------- */
+  .grupo-enlaces {
+    margin-bottom: 32px;
+  }
+
+  .grupo-enlaces:last-child {
+    margin-bottom: 0;
+  }
+
+  .grupo-enlaces .subtitulo-bloque {
+    font-family: var(--fuente-mono);
+  }
+
+  .lista-enlaces {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .enlace-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 4px;
+    font-family: var(--fuente-mono);
+    font-size: 14px;
+    color: var(--texto);
+    border-bottom: 1px solid transparent;
+    transition: color 0.15s ease, padding-left 0.15s ease;
+  }
+
+  .enlace-item .prompt {
+    color: var(--primario);
+    user-select: none;
+  }
+
+  .enlace-item:hover {
+    color: var(--hover);
+    padding-left: 8px;
+  }
+
+  .enlace-item .flecha {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    color: var(--primario);
+  }
+
+  .enlace-item:hover .flecha {
+    opacity: 1;
+  }
+
+  /* ---------- Noticias ---------- */
+  .lista-noticias {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .noticia-item {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--borde);
+  }
+
+  .noticia-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .noticia-fecha {
+    font-family: var(--fuente-mono);
+    font-size: 12px;
+    color: var(--primario);
+    white-space: nowrap;
+  }
+
+  .noticia-titulo {
+    font-weight: 600;
+    font-size: 14.5px;
+    margin-bottom: 4px;
+  }
+
+  .noticia-resumen {
+    font-size: 13.5px;
+    color: var(--texto-suave);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    padding: 40px 0 56px;
+  }
+
+  .footer-contacto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .footer-correo {
+    font-family: var(--fuente-mono);
+    font-size: 14px;
+    color: var(--primario);
+    transition: color 0.15s ease;
+  }
+
+  .footer-correo:hover {
+    color: var(--hover);
+  }
+
+  .footer-legal {
+    font-size: 12.5px;
+    color: var(--texto-suave);
+    padding-top: 20px;
+    border-top: 1px solid var(--borde);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 600px) {
+    header.hero {
+      padding: 64px 0 40px;
+    }
+
+    .hero-top {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    section {
+      padding: 40px 0;
+    }
+
+    .lista-servicios {
+      grid-template-columns: 1fr;
+    }
+
+    .noticia-item {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+
+    .footer-contacto {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="contenedor">
+
+    <!-- ===================== HERO ===================== -->
+    <header class="hero">
+      <div class="hero-top">
+        <div class="terminal-tag">
+          <span>whoami</span>
+          <span class="cursor"></span>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language selector">
+          <a class="lang-btn" href="index.html">ES</a>
+          <span class="lang-divisor">/</span>
+          <span class="lang-btn lang-activo" aria-current="page">ENG</span>
+        </div>
+      </div>
+      <h1 class="nombre">[Adrian Beltran]</h1>
+      <p class="rol">Computer Engineer &amp; Computer Programming Technician</p>
+      <p class="ubicacion">[Mexico city, Mexico] · GMT-6 · Remote</p>
+      <a class="enlace-cv" href="[url-cv-pdf]" download>
+        <span class="prompt">$</span>
+        <span>Download resume (pdf format)</span>
+        <span class="flecha">→</span>
+      </a>
+    </header>
+
+    <!-- ===================== PROYECTOS Y EXPERIENCIA ===================== -->
+    <section id="proyectos">
+      <div class="eyebrow">
+        <span class="indice">// 01</span>
+        <h2>Projects &amp; Experience</h2>
+      </div>
+
+      <ul class="lista-formacion">
+        <li>
+          <div class="item-titulo">[Comparative Analysis of the RSTP and OSPF Protocols in an Emulated University Network Topology Using 
+		  Traditional Networks and SDN]</div>
+          <div class="item-detalle"><span>Stack:</span> [Mininet, Python3]</div>
+          <p class="item-descripcion">[Designed and built an SDN network to analyze its response to RSTP and OSPF protocols]</p>
+        </li>
+		<!-- 
+        <li>
+          <div class="item-titulo">[Nombre del proyecto / empresa]</div>
+          <div class="item-detalle"><span>Stack:</span> [tecnologías usadas]</div>
+          <p class="item-descripcion">[Brief description of the role, problem solved, and measurable impact.]</p>
+        </li>
+        <li>
+          <div class="item-titulo">[Nombre del proyecto]</div>
+          <div class="item-detalle"><span>Stack:</span> [tecnologías usadas]</div>
+          <p class="item-descripcion">[Brief description of the role, problem solved, and measurable impact.]</p>
+        </li>
+		-->
+      </ul>
+    </section>
+
+    <!-- ===================== STACK TÉCNICO ===================== -->
+    <section id="stack">
+      <div class="eyebrow">
+        <span class="indice">// 02</span>
+        <h2>Technical Stack </h2>
+      </div>
+
+      <div class="bloque-formacion">
+        <p class="subtitulo-bloque">Backend </p>
+        <ul class="lista-servicios">
+          <li>[Java]</li>
+          <li>[JS]</li>
+          <li>[C]</li>
+          <li>[C++]</li>
+		  <li>[Python]</li>
+        </ul>
+      </div>
+
+      <div class="bloque-formacion">
+        <p class="subtitulo-bloque">Data Bases</p>
+        <ul class="lista-servicios">
+          <li>[PostgreSQL]</li>
+		  <li>[CloudFlare]</li>
+          <li>[MySQL]</li>
+        </ul>
+      </div>
+
+      <div class="bloque-formacion">
+        <p class="subtitulo-bloque">Infraestructure &amp; Tools</p>
+        <ul class="lista-servicios">
+          <li>[Git]</li>
+		  <!--
+          <li>[Docker]</li>
+          <li>[Cloudflare Pages]</li>
+          <li>[CI/CD]</li>
+		  -->
+        </ul>
+      </div>
+    </section>
+    <!-- ===================== ENLACES ===================== -->
+    <section id="enlaces">
+      <div class="eyebrow">
+        <span class="indice">// 03</span>
+        <h2>Links</h2>
+      </div>
+
+      <div class="grupo-enlaces">
+        <p class="subtitulo-bloque">Developtment</p>
+        <ul class="lista-enlaces">
+          <li>
+            <a class="enlace-item" href="https://github.com/iamabeltran" target="_blank" rel="noopener">
+              <span class="prompt">$</span> github
+              <span class="flecha">→</span>
+            </a>
+          </li>
+          <li>
+            <a class="enlace-item" href="https://leetcode.com/u/adrian_beltran/" target="_blank" rel="noopener">
+              <span class="prompt">$</span> leetcode
+              <span class="flecha">→</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+	  
+	  <div class="grupo-enlaces">
+        <p class="subtitulo-bloque">Corporative</p>
+        <ul class="lista-enlaces">
+          <li>
+            <a class="enlace-item" href="https://www.linkedin.com/in/adrian-eduardo-sanchez-beltran-b9509841a/?skipRedirect=true" target="_blank" rel="noopener">
+              <span class="prompt">$</span> linkedin
+              <span class="flecha">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+	  
+      <div class="grupo-enlaces">
+        <p class="subtitulo-bloque">Contact</p>
+        <ul class="lista-enlaces">
+          <li>
+            <a class="enlace-item" href="mailto:contact@iamabeltran.com">
+              <span class="prompt">$</span> email: contact@iamabeltran.com
+			  
+              <span class="flecha">→</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== BITÁCORA TÉCNICA ===================== -->
+    <section id="bitacora">
+      <div class="eyebrow">
+        <span class="indice">// 04</span>
+        <h2>Technical Log</h2>
+      </div>
+
+      <ul class="lista-noticias" id="lista-noticias">
+        <li class="noticia-item">
+          <span class="noticia-fecha">[06/ 2026]</span>
+          <div>
+            <div class="noticia-titulo">[Algorithm optimization on LeetCode]</div>
+            <p class="noticia-resumen">[Solved problem X, reducing time complexity from O(n²) to O(n) using a Hash Map.]</p>
+          </div>
+        </li>
+        <li class="noticia-item">
+          <span class="noticia-fecha">[06/2026]</span>
+          <div>
+            <div class="noticia-titulo">[Serverless deployment on Cloudflare]</div>
+            <p class="noticia-resumen">[Migrated this portfolio to Cloudflare Pages and configured perimeter security via its WAF.]</p>
+          </div>
+        </li>
+        <li class="noticia-item">
+          <span class="noticia-fecha">[06/2026]</span>
+          <div>
+            <div class="noticia-titulo">[Advance in the integration University project]</div>
+            <p class="noticia-resumen">[A technical review with my assesor]</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== FORMACIÓN Y CERTIFICACIONES ===================== -->
+    <section id="formacion">
+      <div class="eyebrow">
+        <span class="indice">// 05</span>
+        <h2>Education &amp; Certifications</h2>
+      </div>
+
+      <div class="bloque-formacion">
+        <p class="subtitulo-bloque">Academic</p>
+        <ul class="lista-formacion">
+          <li>
+            <div class="item-titulo">[B.S. in Computer Engineering]</div>
+            <div class="item-detalle">Universidad Autónoma Metropolitana (UAM Azcapotzalco) | [2022] - [Present (Expected: (12 2026 B.S.))]</div>
+          </li>
+          <li>
+            <div class="item-titulo">[Technical Degree in Software Programming]</div>
+            <div class="item-detalle">[CECyT 9 "Juan de Dios Bátiz"] | [2019] - [2022]</div>
+          </li>
+        </ul>
+      </div>
+
+
+    </section>
+
+    <!-- ===================== IDIOMAS ===================== -->
+    <section id="idiomas">
+      <div class="eyebrow">
+        <span class="indice">// 06</span>
+        <h2>Languages</h2>
+      </div>
+
+      <ul class="lista-idiomas">
+        <li>
+          <span class="item-titulo">Spanish</span>
+          <span class="idioma-nivel">Native</span>
+        </li>
+        <li>
+          <span class="item-titulo">English</span>
+          <span class="idioma-nivel">C1 (Advanced)</span>
+          
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <div class="footer-contacto">
+        <span class="subtitulo-bloque" style="margin:0;">Contact</span>
+        <a class="footer-correo" href="mailto:contact@iamabeltran.com">contact@iamabeltran.com</a>
+      </div>
+      <p class="footer-legal">© <span id="anio-actual"></span> [Adrian Beltran]. <span>All rights reserved.</span></p>
+    </footer>
+
+  </div>
+
+  <script>
+    // Año dinámico en el footer
+    document.getElementById('anio-actual').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
