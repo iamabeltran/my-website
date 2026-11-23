@@ -1,0 +1,151 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getDict, locales, otherLang, type Lang } from '../../i18n/utils';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const { lang } = Astro.params as { lang: Lang };
+const t = getDict(lang);
+const other = otherLang(lang);
+const year = new Date().getFullYear();
+const idx = (n: number) => String(n).padStart(2, '0');
+const isExternal = (u: string) => u.startsWith('http');
+---
+
+<Base lang={lang} title={t.meta.title} description={t.meta.description} ogLocale={t.meta.ogLocale}>
+  <div class="contenedor">
+    <header class="hero">
+      <div class="hero-top">
+        <div class="terminal-tag"><span>whoami</span><span class="cursor"></span></div>
+        <div class="lang-switch" role="group" aria-label={t.ui.langLabel}>
+          {locales.map((l, i) => (
+            <>
+              {i > 0 && <span class="lang-divisor">/</span>}
+              {l === lang ? (
+                <span class="lang-btn lang-activo" aria-current="page">{l.toUpperCase()}</span>
+              ) : (
+                <a class="lang-btn" href={`/${l}/`} hreflang={l}>{l.toUpperCase()}</a>
+              )}
+            </>
+          ))}
+        </div>
+      </div>
+      <h1 class="nombre">&lt; Adrian Beltran &lt;</h1>
+      <p class="rol">{t.hero.role}</p>
+      <p class="ubicacion">{t.hero.location}</p>
+      <a class="enlace-cv" href={t.hero.cvFile} download>
+        <span class="prompt">$</span>
+        <span>{t.hero.cvLabel}</span>
+        <span class="flecha">→</span>
+      </a>
+    </header>
+
+    <section id="proyectos">
+      <div class="eyebrow"><span class="indice">// {idx(1)}</span><h2>{t.sections.projects}</h2></div>
+      <ul class="lista-formacion">
+        {t.projects.map((p) => (
+          <li>
+            <div class="item-titulo">
+              {p.url ? <a class="enlace-texto" href={p.url} target="_blank" rel="noopener">{p.title}</a> : p.title}
+            </div>
+            <div class="item-detalle"><span>Stack:</span> {p.stack}</div>
+            <p class="item-descripcion">{p.description}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="stack">
+      <div class="eyebrow"><span class="indice">// {idx(2)}</span><h2>{t.sections.stack}</h2></div>
+      {t.stackGroups.map((g) => (
+        <div class="bloque-formacion">
+          <p class="subtitulo-bloque">{g.name}</p>
+          <ul class="lista-servicios">{g.items.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      ))}
+    </section>
+
+    <section id="enlaces">
+      <div class="eyebrow"><span class="indice">// {idx(3)}</span><h2>{t.sections.links}</h2></div>
+      {t.linkGroups.map((g) => (
+        <div class="grupo-enlaces">
+          <p class="subtitulo-bloque">{g.name}</p>
+          <ul class="lista-enlaces">
+            {g.items.map((l) => (
+              <li>
+                <a
+                  class="enlace-item"
+                  href={l.url}
+                  {...(isExternal(l.url) ? { target: '_blank', rel: 'noopener' } : {})}
+                >
+                  <span class="prompt">$</span> {l.label}
+                  <span class="flecha">→</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+
+    <section id="bitacora">
+      <div class="eyebrow"><span class="indice">// {idx(4)}</span><h2>{t.sections.log}</h2></div>
+      <ul class="lista-noticias">
+        {t.log.map((n) => (
+          <li class="noticia-item">
+            <span class="noticia-fecha">{n.date}</span>
+            <div>
+              <div class="noticia-titulo">{n.title}</div>
+              <p class="noticia-resumen">{n.summary}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="formacion">
+      <div class="eyebrow"><span class="indice">// {idx(5)}</span><h2>{t.sections.education}</h2></div>
+      <ul class="lista-formacion">
+        {t.education.map((e) => (
+          <li>
+            <div class="item-titulo">{e.title}</div>
+            <div class="item-detalle">{e.place} · {e.period}</div>
+            {e.note && <p class="item-descripcion">{e.note}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section id="idiomas">
+      <div class="eyebrow"><span class="indice">// {idx(6)}</span><h2>{t.sections.languages}</h2></div>
+      <ul class="lista-idiomas">
+        {t.languages.map((l) => (
+          <li><span class="item-titulo">{l.name}</span><span class="idioma-nivel">{l.level}</span></li>
+        ))}
+      </ul>
+    </section>
+
+    <footer>
+      <div class="footer-contacto">
+        <span class="subtitulo-bloque" style="margin:0;">{t.ui.contact}</span>
+        <a class="footer-correo" href="mailto:contact@iamabeltran.com">contact@iamabeltran.com</a>
+      </div>
+      <p class="footer-legal">© {year} Adrian Beltran. {t.ui.rights}</p>
+      <div class="spotify-wrap">
+        <p class="spotify-label"><span class="prompt">$</span> {t.ui.nowPlaying}</p>
+        <iframe
+          class="spotify-embed"
+          src="https://open.spotify.com/embed/track/1ff8lsrJ2kuZuofMw81EQo?utm_source=generator&theme=0"
+          width="100%"
+          height="152"
+          frameborder="0"
+          allowfullscreen
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          title={t.ui.spotifyTitle}></iframe>
+      </div>
+    </footer>
+  </div>
+</Base>

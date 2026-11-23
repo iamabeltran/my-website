@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "title": "Adrian Beltran — Backend Developer (Java, Spring Boot)",
+    "description": "Portafolio de Adrian Beltran, Ing. en Computación enfocado en desarrollo backend con Java y Spring Boot.",
+    "ogLocale": "es_MX"
+  },
+  "ui": {
+    "langLabel": "Selector de idioma",
+    "contact": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "nowPlaying": "escuchando ahora",
+    "spotifyTitle": "Canción en Spotify"
+  },
+  "hero": {
+    "role": "Backend Developer (Java, Spring Boot) · Ing. en Computación",
+    "location": "Ciudad de México, México · GMT-6 · Remoto, híbrido o presencial",
+    "cvLabel": "Descargar CV (PDF)",
+    "cvFile": "/cv_es.pdf"
+  },
+  "sections": {
+    "projects": "Proyectos y Experiencia",
+    "stack": "Stack Técnico",
+    "links": "Enlaces",
+    "log": "Bitácora Técnica",
+    "education": "Formación",
+    "languages": "Idiomas"
+  },
+  "projects": [
+    {
+      "title": "bank-api — API REST bancaria transaccional",
+      "stack": "Java 21, Spring Boot, MySQL, Docker, Flyway, Testcontainers",
+      "description": "Cuentas, depósitos, transferencias idempotentes (header Idempotency-Key) e historial paginado. Transferencias atómicas con bloqueos pesimistas de fila; pruebas de concurrencia sobre MySQL real: sin deadlocks en 100 transferencias cruzadas con 16 hilos y una sola ejecución ante 20 solicitudes idempotentes duplicadas.",
+      "url": "https://github.com/iamabeltran/bank-api"
+    },
+    {
+      "title": "Emulación SDN y pruebas de fallas (proyecto terminal, UAM Azcapotzalco)",
+      "stack": "Python, Mininet, controlador SDN, iperf",
+      "description": "Red SDN de 12 hosts emulada en Mininet; comparación de tres topologías ante fallas de enlace midiendo throughput, pérdida de paquetes y tiempo de detección de fallas (menos de 1 s)."
+    },
+    {
+      "title": "Sitio web personal e infraestructura de correo",
+      "stack": "GitHub Pages, Cloudflare, Brevo, DNS",
+      "description": "Sitio con DNS administrado manualmente en Cloudflare y correo multi-alias: entrada con Cloudflare Email Routing, salida por SMTP de Brevo, autenticado con SPF, DKIM y DMARC.",
+      "url": "https://iamabeltran.com"
+    },
+    {
+      "title": "Práctica de algoritmos (LeetCode)",
+      "stack": "Java, Grind 75",
+      "description": "Más de 30 problemas resueltos en Java (arreglos, hash maps, dos punteros, listas ligadas, backtracking) con sesiones cronometradas.",
+      "url": "https://github.com/iamabeltran/leetcode-java-solutions"
+    }
+  ],
+  "stackGroups": [
+    {
+      "name": "Lenguajes",
+      "items": ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Bash"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Spring Boot", "Spring Data JPA / Hibernate", "REST APIs", "Flyway", "MySQL", "Java Servlets"]
+    },
+    {
+      "name": "Pruebas y Entrega",
+      "items": ["JUnit 5", "Mockito", "Testcontainers", "Maven", "Git", "Docker / Compose", "GitHub Actions"]
+    },
+    {
+      "name": "Infraestructura y Redes",
+      "items": ["Linux", "Cloudflare (DNS, Email Routing)", "GitHub Pages", "SMTP (Brevo)", "SPF / DKIM / DMARC", "TCP/IP", "Mininet", "iperf"]
+    }
+  ],
+  "linkGroups": [
+    {
+      "name": "Desarrollo",
+      "items": [
+        { "label": "github", "url": "https://github.com/iamabeltran" },
+        { "label": "leetcode", "url": "https://leetcode.com/u/adrian_beltran/" }
+      ]
+    },
+    {
+      "name": "Corporativo",
+      "items": [{ "label": "linkedin", "url": "https://www.linkedin.com/in/iamabeltran/" }]
+    },
+    {
+      "name": "Contacto",
+      "items": [{ "label": "correo: contact@iamabeltran.com", "url": "mailto:contact@iamabeltran.com" }]
+    }
+  ],
+  "log": [
+    {
+      "date": "2026",
+      "title": "bank-api: pruebas de concurrencia y benchmark",
+      "summary": "Pruebas sobre MySQL real con Testcontainers y benchmark local con k6: 264 transferencias/s con p95 de 67.7 ms entre 10 cuentas."
+    },
+    {
+      "date": "2026",
+      "title": "Práctica de algoritmos en Java",
+      "summary": "Avance en la lista Grind 75: más de 30 problemas resueltos con sesiones cronometradas."
+    },
+    {
+      "date": "2025–2026",
+      "title": "Proyecto terminal: emulación SDN",
+      "summary": "Comparación de tres topologías bajo fallas de enlace con Mininet e iperf."
+    }
+  ],
+  "education": [
+    {
+      "title": "Ingeniería en Computación",
+      "place": "Universidad Autónoma Metropolitana (UAM Azcapotzalco)",
+      "period": "2020 – abr 2027 (esperado)",
+      "note": "Materias concluyen en diciembre de 2026; titulación en abril de 2027 tras el servicio social."
+    },
+    {
+      "title": "Técnico en Programación de Software",
+      "place": "CECyT 9 «Juan de Dios Bátiz» — Instituto Politécnico Nacional (IPN)",
+      "period": "2017 – 2020",
+      "note": ""
+    }
+  ],
+  "languages": [
+    { "name": "Español", "level": "Nativo" },
+    { "name": "Inglés", "level": "C1.1 (Avanzado) — goFluent" }
+  ]
+}

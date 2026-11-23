@@ -1,0 +1,19 @@
+{
+  "name": "iamabeltran-portfolio",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "check:i18n": "node scripts/check-i18n.mjs",
+    "prebuild": "node scripts/check-i18n.mjs",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

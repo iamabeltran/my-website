@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "title": "Adrian Beltran — Backend Developer (Java, Spring Boot)",
+    "description": "Portfolio of Adrian Beltran, Computer Engineering student focused on Java and Spring Boot backend development.",
+    "ogLocale": "en_US"
+  },
+  "ui": {
+    "langLabel": "Language selector",
+    "contact": "Contact",
+    "rights": "All rights reserved.",
+    "nowPlaying": "now playing",
+    "spotifyTitle": "Song on Spotify"
+  },
+  "hero": {
+    "role": "Backend Developer (Java, Spring Boot) · Computer Engineer",
+    "location": "Mexico City, Mexico · GMT-6 · Remote, hybrid or on-site",
+    "cvLabel": "Download resume (PDF)",
+    "cvFile": "/cv_en.pdf"
+  },
+  "sections": {
+    "projects": "Projects & Experience",
+    "stack": "Technical Stack",
+    "links": "Links",
+    "log": "Technical Log",
+    "education": "Education",
+    "languages": "Languages"
+  },
+  "projects": [
+    {
+      "title": "bank-api — Transactional Banking REST API",
+      "stack": "Java 21, Spring Boot, MySQL, Docker, Flyway, Testcontainers",
+      "description": "Accounts, deposits, idempotent transfers (Idempotency-Key header) and paginated history. Atomic transfers with pessimistic row locks; concurrency tests on real MySQL: no deadlock across 100 crossed transfers on 16 threads, and exactly one execution for 20 duplicate idempotent requests.",
+      "url": "https://github.com/iamabeltran/bank-api"
+    },
+    {
+      "title": "SDN Topology Emulation & Failure Testing (Capstone, UAM Azcapotzalco)",
+      "stack": "Python, Mininet, SDN controller, iperf",
+      "description": "Emulated a 12-host SDN network in Mininet and compared three topologies under link failures, measuring throughput, packet loss and failure detection time (under 1 s)."
+    },
+    {
+      "title": "Personal Website & Email Infrastructure",
+      "stack": "GitHub Pages, Cloudflare, Brevo, DNS",
+      "description": "Site with manually managed DNS on Cloudflare and multi-alias email: inbound via Cloudflare Email Routing, outbound via Brevo SMTP, authenticated with SPF, DKIM and DMARC.",
+      "url": "https://iamabeltran.com"
+    },
+    {
+      "title": "Algorithm Practice (LeetCode)",
+      "stack": "Java, Grind 75",
+      "description": "30+ problems solved in Java (arrays, hash maps, two pointers, linked lists, backtracking) with timed practice sessions.",
+      "url": "https://github.com/iamabeltran/leetcode-java-solutions"
+    }
+  ],
+  "stackGroups": [
+    {
+      "name": "Languages",
+      "items": ["Java", "Python", "JavaScript", "C", "C++", "C#", "SQL", "Bash"]
+    },
+    {
+      "name": "Backend",
+      "items": ["Spring Boot", "Spring Data JPA / Hibernate", "REST APIs", "Flyway", "MySQL", "Java Servlets"]
+    },
+    {
+      "name": "Testing & Delivery",
+      "items": ["JUnit 5", "Mockito", "Testcontainers", "Maven", "Git", "Docker / Compose", "GitHub Actions"]
+    },
+    {
+      "name": "Infrastructure & Networking",
+      "items": ["Linux", "Cloudflare (DNS, Email Routing)", "GitHub Pages", "SMTP (Brevo)", "SPF / DKIM / DMARC", "TCP/IP", "Mininet", "iperf"]
+    }
+  ],
+  "linkGroups": [
+    {
+      "name": "Development",
+      "items": [
+        { "label": "github", "url": "https://github.com/iamabeltran" },
+        { "label": "leetcode", "url": "https://leetcode.com/u/adrian_beltran/" }
+      ]
+    },
+    {
+      "name": "Professional",
+      "items": [{ "label": "linkedin", "url": "https://www.linkedin.com/in/iamabeltran/" }]
+    },
+    {
+      "name": "Contact",
+      "items": [{ "label": "email: contact@iamabeltran.com", "url": "mailto:contact@iamabeltran.com" }]
+    }
+  ],
+  "log": [
+    {
+      "date": "2026",
+      "title": "bank-api: concurrency tests and benchmark",
+      "summary": "Tests on real MySQL with Testcontainers and a local k6 benchmark: 264 transfers/s with p95 67.7 ms across 10 accounts."
+    },
+    {
+      "date": "2026",
+      "title": "Algorithm practice in Java",
+      "summary": "Progress on the Grind 75 list: 30+ problems solved with timed sessions."
+    },
+    {
+      "date": "2025–2026",
+      "title": "Capstone project: SDN emulation",
+      "summary": "Compared three topologies under link failures using Mininet and iperf."
+    }
+  ],
+  "education": [
+    {
+      "title": "B.S. in Computer Engineering",
+      "place": "Universidad Autónoma Metropolitana (UAM Azcapotzalco)",
+      "period": "2020 – Apr 2027 (expected)",
+      "note": "Coursework completes December 2026; degree finalized April 2027 after social service."
+    },
+    {
+      "title": "Technical Degree in Software Programming",
+      "place": "CECyT 9 “Juan de Dios Bátiz” — Instituto Politécnico Nacional (IPN)",
+      "period": "2017 – 2020",
+      "note": ""
+    }
+  ],
+  "languages": [
+    { "name": "Spanish", "level": "Native" },
+    { "name": "English", "level": "C1.1 (Advanced) — goFluent" }
+  ]
+}
